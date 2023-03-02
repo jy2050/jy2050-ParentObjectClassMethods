@@ -56,9 +56,23 @@ public class SampleClass {
     public boolean b;
 
     //    implement a custom .equals(SampleClass other){} method here.
-
+    public boolean equals(Object obj) {
+        if (obj == this) {
+            return true;
+        }
+        if (!(obj instanceof SampleClass)) {
+            return false;
+        }
+        SampleClass other = (SampleClass) obj;
+        return this.a == other.a && this.b == other.b;
+    }
 
     //    implement a custom .toString(){} method here.
-
+    public String toString() {
+        return "SampleClass{" +
+                "a=" + a +
+                ", b=" + b +
+                '}';
+    }
     
 }
